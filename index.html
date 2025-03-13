@@ -7,40 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Calculadora de Planos Alimentares</h1>
-        <p>Calcule seu IMC e TMB, e crie planos alimentares personalizados!</p>
-    </header>
+    <h1>Calculadora de Planos Alimentares Personalizados</h1>
 
-    <section class="form-section">
-        <h2>Insira seus dados</h2>
-        <form id="formulario">
-            <label for="peso">Peso (kg):</label>
-            <input type="number" id="peso" required><br>
+    <!-- Formulário de Login -->
+    <div id="login-form">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Senha">
+        <button onclick="login()">Entrar</button>
+        <p>Não tem uma conta? <a href="#" onclick="showRegisterForm()">Cadastre-se</a></p>
+    </div>
 
-            <label for="altura">Altura (m):</label>
-            <input type="number" id="altura" step="0.01" required><br>
+    <!-- Formulário de Cadastro -->
+    <div id="register-form" style="display:none;">
+        <h2>Cadastro</h2>
+        <input type="email" id="register-email" placeholder="Email">
+        <input type="password" id="register-password" placeholder="Senha">
+        <button onclick="register()">Cadastrar</button>
+        <p>Já tem uma conta? <a href="#" onclick="showLoginForm()">Login</a></p>
+    </div>
 
-            <label for="idade">Idade:</label>
-            <input type="number" id="idade" required><br>
-
-            <label for="atividade">Nível de Atividade Física:</label>
-            <select id="atividade" required>
-                <option value="baixo">Baixo</option>
-                <option value="moderado">Moderado</option>
-                <option value="alto">Alto</option>
-            </select><br>
-
-            <button type="submit">Calcular</button>
-        </form>
-    </section>
-
-    <section id="resultado">
-        <h2>Resultado:</h2>
-        <p id="imc">IMC: --</p>
-        <p id="tmb">TMB: --</p>
-    </section>
-
-    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
